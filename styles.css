@@ -203,6 +203,45 @@ footer a{
     text-decoration: none;
 }
 
+@keyframes --like-animation {
+
+  0% {
+    scale:1;
+  }
+	50% {
+		scale:1.25;
+	}
+	100% {
+		scale:1;
+	}
+}
+
+ .unliked-button {
+	width:1.75em;
+	height:1.75em;
+	padding:0;
+	
+	background-color:transparent;
+	border-radius:.25em;
+	color:white;
+	
+	line-height:.5em;
+	font-size:2.5em;
+	-webkit-text-stroke-width:.05em;
+  -webkit-text-stroke-color:crimson;
+	outline-color:crimson;
+}
+
+ .unliked-button.liked {
+
+    animation-name: --like-animation;
+	animation-duration:.25s;
+	animation-iteration-count:2;
+	animation-fill-mode:forwards;	
+	color:crimson;
+    fill: crimson;
+}
+
 
 @media (min-width: 600px) {
     header {
