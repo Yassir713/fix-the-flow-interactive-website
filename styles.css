@@ -1,0 +1,277 @@
+:root {
+        --secondary-color-main: hsl(40, 100%, 80%);
+    }
+
+header {
+    position: relative;        /* zorgt ervoor dat die menu in de header blijft */
+    height: 80px;              /* Vaste hoogte */
+    display: flex;
+    justify-content: center;   /* Logo centreren */
+    align-items: center;
+}
+
+/* Logo blijft in het midden */
+.logo {
+    width: 250px;
+    height: 141px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Hamburger menu naar rechts */
+header button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* Centreert op de y-as binnen de header */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Navigatie menu niet zichtbaar*/
+.navigatie-desktop{   
+    display:none;
+    list-style: none;
+}
+
+/* Stijl van de text mooi maken */
+.navigatie-desktop li a {
+    color: var(--lightmode-text);
+    text-decoration: none;
+}
+
+/* Nav popover krijgt geen positie in de header */
+nav {
+    padding: 20px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+/* stijl voor content in de hamburger menu */
+nav ul li a {
+    color: var(--lightmode-text);
+    text-decoration: none;
+    font-weight: medium;
+    font-size: 18px;
+}
+
+.close-menu {
+    margin-left: 0px;
+}
+
+/* button netter */
+button {
+   border:none;
+   background-color:transparent;
+   cursor: pointer;   
+}
+
+
+:popover-open { 
+	border: none;  /* zwarte default border weg */
+    height: 100%;
+	width: 50%;   /* popover is 50% van de width op website */
+	position: fixed;
+    margin-right: 0px; /* komt rechts */
+}
+
+.ad-start {
+    font-size: 16px;
+    color: var(--lightmode-text);
+    padding: 170px;
+    text-align: center;
+    width: 100%;
+    background: url('./assets/bureau.jpg') 50% 50%;  /* op de achtergrond komt dit foto te staan, 50 50 voor centreren */
+    background-size: cover;                          /* om de hele afbeelding te zien */
+    margin-bottom: 50px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.save-the-date-section {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.save-the-date {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--primary-color-dark);
+    width: 40%;
+    
+}
+
+.save-the-date-text {
+    margin-top: 0%;
+    position: relative;
+    color: var(--darkmode-text);
+}
+
+.logo-mini {
+    position: absolute;
+    margin-top: -60px;
+    margin-right: 195px;
+    width: 173px;
+    height: 97px;
+}
+
+.hogescholen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 100px;
+    width: 100%;
+    background: url(assets/achtergrond.png);
+    margin-top: 20px;
+}
+
+.scholen-fotos {
+    width: 190px;
+    height: 80px;
+}
+
+.hu {
+    width: 260px;
+    height: 55px;
+}
+
+.aeres {
+    width: 146px;
+    height: 110px;
+}
+
+.ontdek-meer-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    width: 50%;
+    text-align: center;
+}
+
+.foto-main{
+    position: block;
+    width: 314px;
+    height: 363px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color-dark);
+    width: 100%;
+    padding-bottom: 300px;
+    margin-top: 100px;
+}
+
+footer p {
+    color: white;
+    margin-left: 10px;
+}
+
+footer ul li{
+    list-style: none;
+}
+
+footer a{
+    color: var(--darkmode-text);
+    text-decoration: none;
+}
+
+
+@media (min-width: 600px) {
+    header {
+        justify-content: flex-start; /* logo naar links */
+    }
+
+    .logo {
+        margin: 0; /* voorkomt centreren */
+    }
+
+    /* Hamburger menu blijft rechts */
+    header button {
+        right: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+    
+    }
+
+    /* Hamburger verbergen */
+    .hamburgertje {
+        display: none;
+    }
+
+    /* Navigatie menu zichtbaar */
+    .navigatie-desktop {
+    display: flex;
+    gap: 40px; 
+    margin-left: auto; /* duw de nav naar rechts */
+    list-style: none;
+    align-items: center;
+    }
+    
+    .ad-info {
+        padding: 50px;
+    }
+
+    .save-the-date {
+    width: 20%;
+    }
+    
+    .foto1{
+        width: 526px;
+        height: 363px;
+    }
+    
+    .info {
+    width: 40%;    
+    }
+    
+}
+
+
+
+@media (min-width: 600px) and (max-width: 1200px) {
+
+    .ad-start {
+    font-size: 40px;
+    
+}
+
+
+}
+
+@media (min-width: 1200px) {
+
+    .ad-start {
+    font-size: 48px;
+}
+
+}
