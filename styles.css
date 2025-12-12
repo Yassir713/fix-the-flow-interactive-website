@@ -78,6 +78,11 @@ button {
     margin-right: 0px; /* komt rechts */
 }
 
+.page-title {
+    text-align: center;
+    padding-right: 700px;
+}
+
 .ad-start {
     font-size: 16px;
     color: var(--lightmode-text);
