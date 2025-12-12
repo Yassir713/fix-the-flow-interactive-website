@@ -1,10 +1,10 @@
-// 1. Selecteer element en geef het een naam in js
-const likeButton = document.querySelector('.unliked-button');
+// 1. Selecteer alle elementen met dezelfde class
+const likeButtons = document.querySelectorAll('.unliked-button');
 
-// 2. Klikken activeert de functie
-likeButton.addEventListener("click", toggleLike);
-
-// 3. Het kan aan en uit gezet worden
-function toggleLike() {
-	likeButton.classList.toggle("liked");
-}
+// 2. Voor elk element apart een click-event toevoegen
+likeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // 3. Toggle de class op het geklikte element
+        button.classList.toggle("liked");
+    });
+});
