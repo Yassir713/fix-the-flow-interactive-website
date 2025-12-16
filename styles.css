@@ -8,6 +8,9 @@ header {
     display: flex;
     justify-content: center;   /* Logo centreren */
     align-items: center;
+    @media (min-width: 600px) {
+        justify-content: flex-start; /* logo naar links */
+    }
 }
 
 /* Logo blijft in het midden */
@@ -16,6 +19,9 @@ header {
     height: 141px;
     display: block;
     margin: 0 auto;
+    @media (min-width: 600px) {
+        margin: 0; /* voorkomt centreren */
+    }
 }
 
 /* Hamburger menu naar rechts */
@@ -27,12 +33,36 @@ header button {
     background: none;
     border: none;
     cursor: pointer;
+    /* Hamburger menu blijft rechts */
+    @media (min-width: 600px) {
+        right: 20px;
+        position: absolute;       
+        top: 50%; 
+        transform: translateY(-50%);
+    }
+
 }
 
 /* Navigatie menu niet zichtbaar*/
 .navigatie-desktop{   
     display:none;
     list-style: none;
+    /* Navigatie menu zichtbaar */
+    @media (min-width: 600px) {
+    display: flex;
+    gap: 40px; 
+    margin-left: auto; /* duw de nav naar rechts */
+    list-style: none;
+    align-items: center;    }
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 /* Stijl van de text mooi maken */
@@ -83,15 +113,18 @@ button {
     padding-right: 700px;
 }
 
-.ad-start {
-    font-size: 16px;
-    color: var(--lightmode-text);
-    padding: 170px;
-    text-align: center;
+.ad-info-photo {
     width: 100%;
-    background: url('./assets/bureau.jpg') 50% 50%;  /* op de achtergrond komt dit foto te staan, 50 50 voor centreren */
-    background-size: cover;                          /* om de hele afbeelding te zien */
-    margin-bottom: 50px;
+}
+
+.ad-uitleg-section {
+    display: flex;
+    justify-content: center;
+}
+
+.ad-uitleg {
+    text-align: center;
+    width: 50%;
 }
 
 .text-center {
@@ -114,8 +147,10 @@ button {
     align-items: center;
     text-align: center;
     background-color: var(--primary-color-dark);
-    width: 40%;
-    
+    width: 70%;
+    @media (min-width: 600px) {
+    width: 20%;
+    }
 }
 
 .save-the-date-text {
@@ -161,7 +196,6 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 30px;
 }
 
 .info {
@@ -171,18 +205,27 @@ button {
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    @media (min-width: 600px) {
+    width: 40%; 
+    }
 }
 
 .info-text {
-    width: 50%;
+    width: 80%;
     text-align: center;
 }
 
 .foto-main{
     position: block;
     width: 314px;
-    height: 363px;
+    height: 303px;
+}
+
+.foto-main2{
+    position: block;
+    width: 314px;
+    height: 253px;
 }
 
 footer{
@@ -249,73 +292,15 @@ footer a{
 
 
 @media (min-width: 600px) {
-    header {
-        justify-content: flex-start; /* logo naar links */
-    }
-
-    .logo {
-        margin: 0; /* voorkomt centreren */
-    }
-
-    /* Hamburger menu blijft rechts */
-    header button {
-        right: 20px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-
-    
-    }
 
     /* Hamburger verbergen */
     .hamburgertje {
         display: none;
     }
-
-    /* Navigatie menu zichtbaar */
-    .navigatie-desktop {
-    display: flex;
-    gap: 40px; 
-    margin-left: auto; /* duw de nav naar rechts */
-    list-style: none;
-    align-items: center;
-    }
-    
-    .ad-info {
-        padding: 50px;
-    }
-
-    .save-the-date {
-    width: 20%;
-    }
-    
-    .foto1{
-        width: 526px;
-        height: 363px;
-    }
-    
-    .info {
-    width: 40%;    
-    }
-    
+   
 }
 
 
 
-@media (min-width: 600px) and (max-width: 1200px) {
-
-    .ad-start {
-    font-size: 40px;
-    
-}
-
-
-}
-
-@media (min-width: 1200px) {
-
-    .ad-start {
-    font-size: 48px;
-}
-
-}
+/* @media (min-width: 600px) and (max-width: 1200px) {} */
+/* @media (min-width: 1200px) {} */
